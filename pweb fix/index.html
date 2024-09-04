@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zevanya</title>
+    <style>
+        body {
+            background-color: #fff5f5; /* Soft background color */
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #F08080; /* Light Coral color */
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            color: #F08080;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        section h2::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background-color: #F08080;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        section h2:hover {
+            color: #FF6F61; /* Slightly darker hover color */
+        }
+
+        section h2:hover::after {
+            width: 100px;
+        }
+
+        .content {
+            display: none;
+            margin-top: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+            line-height: 1.6em;
+            transition: max-height 0.5s ease;
+        }
+
+        .active .content {
+            display: block;
+        }
+
+        .profile {
+            text-align: center;
+        }
+
+        .profile img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid #F08080;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile img:hover {
+            transform: scale(1.1);
+        }
+
+        .profile h1 {
+            font-size: 2.5em;
+            color: #F08080;
+            margin: 10px 0;
+        }
+
+        .profile p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            font-size: 1.2em;
+            color: #F08080;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        .skills ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .skills ul li {
+            background-color: #F08080;
+            color: white;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .skills ul li:hover {
+            background-color: #FF6F61;
+        }
+
+        .projects .project, .organization .organization-item, .volunteering .volunteering-item {
+            margin-bottom: 20px;
+        }
+
+        .projects .project h3, .organization .organization-item h3, .volunteering .volunteering-item h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #F08080;
+        }
+
+        .projects .project p, .organization .organization-item p, .volunteering .volunteering-item p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #fff0f0;
+            color: #666;
+            font-size: 1.1em;
+            border-top: 1px solid #F08080;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Zevanya Queeneema Almeera S.</h1>
+    </header>
+
+    <div class="container">
+
+        <!-- Section Profile -->
+        <section class="profile" id="section-profile">
+            <h2 onclick="toggleSection('section-profile')">Profile</h2>
+            <div class="content">
+                <img src="foto syantik.jpg" alt="Profile Picture"> <!-- Replace with your photo -->
+                <h1>Zevanya</h1>
+                <p>Email: <a href="mailto:neeemmaa@gmail.com">neeemmaa@gmail.com</a> | LinkedIn: <a href="https://www.linkedin.com/in/zevanya-queeneema" target="_blank">https://www.linkedin.com/in/zevanya-queeneema</a></p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/zevanya-queeneema" target="_blank">LinkedIn</a>
+                    <a href="mailto:neeemmaaa@gmail.com">Email</a>
+                    <a href="tel:+6282122341818">Kontak</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section About Me -->
+        <section class="about" id="section-about">
+            <h2 onclick="toggleSection('section-about')">About Me</h2>
+            <div class="content">
+                <p>I am a second-year Software Engineering student actively pursuing my studies while engaging in various extracurricular activities. Alongside my academic journey, I am deeply involved in both on-campus committees and external organizations, where I collaborate with peers and contribute to meaningful projects. My active participation in these groups not only enhances my technical skills but also hones my leadership and teamwork abilities, preparing me for future challenges in the tech industry.</p>
+            </div>
+        </section>
+
+        <!-- Section Skills -->
+        <section class="skills" id="section-skills">
+            <h2 onclick="toggleSection('section-skills')">Skills</h2>
+            <div class="content">
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>C++</li>
+                    <li>UI/UX Design</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section Projects -->
+        <section class="projects" id="section-projects">
+            <h2 onclick="toggleSection('section-projects')">Educations</h2>
+            <div class="content">
+                <div class="project">
+                    <h3>Institut Teknologi Sepuluh Nopember</h3>
+                    <p>Software Engineering</p>
+                </div>
+                <div class="project">
+                    <h3>SMA Negeri 6 Surabaya</h3>
+                    <p>Science Major</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Organization -->
+        <section class="organization" id="section-organization">
+            <h2 onclick="toggleSection('section-organization')">Organization</h2>
+            <div class="content">
+                <div class="organization-item">
+                    <h3>Member of Student Council, Public Senior High School 6 Surabaya</h3>
+                    <p>2021-2023</p>
+                    <p>• Organized school activities, maintained extracurriculars, and coordinated sports events.</p>
+                    <p>• Led meetings and maintained relations with school residents.</p>
+                </div>
+                <div class="organization-item">
+                    <h3>Member of NovoClub, Paragon Club</h3>
+                    <p>• Learn good public speaking and leadership.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Volunteering -->
+        <section class="volunteering" id="section-volunteering">
+            <h2 onclick="toggleSection('section-volunteering')">Volunteering</h2>
+            <div class="content">
+                <div class="volunteering-item">
+                    <h3>Festival Staff at SCHEMATICS in ITS 2024</h3>
+                    <p>• Creating a Terms of Reference (ToR) for the event.</p>
+                    <p>• Developing the Event Rundown.</p>
+                    <p>• Contacting External Parties for Collaboration.</p>
+                </div>
+                <div class="volunteering-item">
+                    <h3>Mentor at Inclenation 2024</h3>
+                    <p>• Guiding New Students: Provide guidance on academic and campus life.</p>
+                    <p>• Facilitating Integration: Help new students integrate into the campus community.</p>
+                    <p>• Encouraging Participation: Motivate new students to get involved in campus events.</p>
+                </div>
+                <div class="volunteering-item">
+                    <h3>Consumption Staff at SENSE, Public Senior High School 6 2023</h3>
+                    <p>• Coordinating food and beverage orders.</p>
+                    <p>• Handling food safety and hygiene.</p>
+                    <p>• Managing food distribution for the staff.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        &copy; 2024 Zevanya Queeneema Almeera S. All Rights Reserved.
+    </footer>
+
+    <script>
+        // Function to toggle collapse/expand section
+        function toggleSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            section.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
